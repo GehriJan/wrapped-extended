@@ -35,7 +35,7 @@ def main():
     st.title("Spotify Data")
 
     df = read_spotify_data()
-    
+
 
     st.components.v1.html(html_content, height=600)
 

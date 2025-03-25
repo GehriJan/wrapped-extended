@@ -24,6 +24,7 @@ class DashboardComponent(abc.ABC):
         pass
 
 class Heatmap(DashboardComponent):
+
     def preprocess(self, df):
         return (
             pd.to_datetime(df["ts"])
@@ -33,6 +34,7 @@ class Heatmap(DashboardComponent):
             .dt.date.value_counts()
             .sort_index()
         )
+
     def get_html_content(self, data):
         calendar = (
             Calendar()
